@@ -6,17 +6,12 @@ function App() {
     const handleClick = () => {
         setOpened(prevValue => !prevValue);
     };
-    if (isOpened) {
-        return (
-            <>
-                <Title name="Products" type="normal"/>
-                <button onClick={handleClick}>Close title</button>
-            </>
-        );
-    } else {
-        return <button onClick={handleClick}>Open Title</button>;
-    }
-
+    return (
+        <>
+            {isOpened && <Title name="Hello" type="normal"/>}
+            <button onClick={handleClick}>{isOpened ? "Close" : "Open"}</button>
+        </>
+    );
 }
 
 export default App;
